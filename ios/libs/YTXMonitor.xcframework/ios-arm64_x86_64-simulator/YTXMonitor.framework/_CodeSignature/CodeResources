@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/ACMManager.h</key>
 		<data>
-		XGVRmgXOvGH5P/uK4QM+xYPXio8=
+		5WYuZyr4fqUDLbb/da4hgcv2p80=
 		</data>
 		<key>Headers/ACMMonitor.h</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Headers/YTXMonitor.h</key>
 		<data>
-		B16MlYb6Q7jbCu0U+5ll1Fhzit0=
+		2cS5nA8HRwXAAe+7Nm4SFgudaDc=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		v2bfg+XVNBbOShi6t0itN5v+yyg=
+		uCYMpeps2MHHFHVEjmu7TV5soo0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -54,11 +54,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XGVRmgXOvGH5P/uK4QM+xYPXio8=
+			5WYuZyr4fqUDLbb/da4hgcv2p80=
 			</data>
 			<key>hash2</key>
 			<data>
-			2UUhlB0oGiMvQVI2P80G8R+YU7GsQ4LRUy6ICbKfVt4=
+			T8Wx5JTgDI61UBvZuBW3vhc1vuXsB2ZrgzTM3Fa2M+8=
 			</data>
 		</dict>
 		<key>Headers/ACMMonitor.h</key>
@@ -87,11 +87,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			B16MlYb6Q7jbCu0U+5ll1Fhzit0=
+			2cS5nA8HRwXAAe+7Nm4SFgudaDc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Me7uTrlZFr1aaANsgCE48kN6SZEWB1JuLIvkbRTi8GA=
+			BaIbsO4sxlFTepQgnAasOjuQsl4gTYMXgekUA/I/QQg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

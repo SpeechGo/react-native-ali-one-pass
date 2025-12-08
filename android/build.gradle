@@ -1,10 +1,13 @@
 
 buildscript {
     repositories {
+        mavenLocal()
+        google()
         jcenter()
-        maven(){ url 'https://maven.aliyun.com/repository/releases' }
-        maven{ url "https://maven.aliyun.com/nexus/content/repositories/releases" }
-    }
+        maven {
+            allowInsecureProtocol = true
+            url "http://mvnrepo.alibaba-inc.com/mvn/repository"
+        }
 }
 
 apply plugin: 'com.android.library'
@@ -22,6 +25,13 @@ android {
         abortOnError false
     }
     repositories {
+        mavenLocal()
+        google()
+        jcenter()
+        maven {
+            allowInsecureProtocol = true
+            url "http://mvnrepo.alibaba-inc.com/mvn/repository"
+        }
         flatDir {
             dirs 'libs'
         }
@@ -43,8 +53,7 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.facebook.react:react-native:+'
-    implementation(name:'auth_number_product-2.14.7-log-online-standard-cuum-release', ext:'aar')
-    implementation(name:'crashshield-2.1.4-release', ext:'aar')
+    implementation(name:'auth_number_product-2.14.17-log-online-standard-cuum-release', ext:'aar')
     implementation(name:'main-2.2.3-release', ext:'aar')
     implementation(name:'logger-2.2.2-release', ext:'aar')
     implementation 'androidx.appcompat:appcompat:1.3.1'
