@@ -8,6 +8,7 @@ buildscript {
             allowInsecureProtocol = true
             url "http://mvnrepo.alibaba-inc.com/mvn/repository"
         }
+    }
 }
 
 apply plugin: 'com.android.library'
