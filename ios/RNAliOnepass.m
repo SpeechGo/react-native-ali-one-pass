@@ -55,7 +55,8 @@ RCT_EXPORT_METHOD(checkEnvAvailable:(RCTPromiseResolveBlock)resolve reject:(RCTP
     if(![self checkInit:reject]){
         return;
     }
-    [tXCommonHandler checkEnvAvailableWithComplete:^(NSDictionary * _Nullable resultDic) {
+    // 使用新版 SDK API，传入 PNSAuthTypeLoginToken 指定为一键登录流程
+    [tXCommonHandler checkEnvAvailableWithAuthType:PNSAuthTypeLoginToken complete:^(NSDictionary * _Nullable resultDic) {
         NSString *resultCode = [resultDic objectForKey:@"resultCode"];
         if([PNSCodeSuccess isEqualToString: resultCode]) {
             resolve(resultDic);
