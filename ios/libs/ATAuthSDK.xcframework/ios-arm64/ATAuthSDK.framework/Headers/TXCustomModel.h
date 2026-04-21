@@ -190,10 +190,20 @@ typedef CGRect(^PNSBuildFrameBlock)(CGSize screenSize, CGSize superViewSize, CGR
 /** 登录按钮背景图片组，默认高度50.0pt，@[激活状态的图片,失效状态的图片,高亮状态的图片] */
 @property (nonatomic, strong) NSArray<UIImage *> *loginBtnBgImgs;
 /**
+ *  是否显示获取登录Token等待过程的loading组件，默认为YES；
+ *  设置为NO时，SDK内部不会自动展示loading，适用于完全不需要loading的场景
+ */
+@property (nonatomic, assign) BOOL showLoginLoading;
+/**
  *  是否自动隐藏点击登录按钮之后授权页上转圈的 loading, 默认为YES，在获取登录Token成功后自动隐藏
  *  如果设置为 NO，需要自己手动调用 [[TXCommonHandler sharedInstance] hideLoginLoading] 隐藏
  */
 @property (nonatomic, assign) BOOL autoHideLoginLoading;
+/**
+ *  loading组件背景图片，默认为nil不设置；
+ *  如果设置，显示loading时会在转圈指示器下方显示该背景图
+ */
+@property (nonatomic, strong, nullable) UIImage *loadingBackgroundImage;
 /**
  *  构建登录按钮的frame，view布局或布局发生变化时调用，不实现则按默认处理
  *  注：不能超出父视图 content view，height不能小于20，width不能小于父视图宽度的一半
@@ -253,11 +263,11 @@ typedef CGRect(^PNSBuildFrameBlock)(CGSize screenSize, CGSize superViewSize, CGR
 @property (nonatomic, copy) NSString *privacyOperatorSufText;
 /** 运营商协议指定显示顺序，默认0，即第1个协议显示，最大值可为3，即第4个协议显示*/
 @property (nonatomic, assign) NSInteger privacyOperatorIndex;
-/** 协议整体文案字体，小于12.0不生效 */
+/** 协议整体文案字体，小于10.0不生效 */
 @property (nonatomic, strong) UIFont *privacyFont;
 /** 协议整体文案行间距，默认0 */
 @property (nonatomic, assign) CGFloat privacyLineSpaceDp;
-/** 运营商协议文案字体，仅对运营商协议本体文案和前后缀生效，小于12.0不生效 */
+/** 运营商协议文案字体，仅对运营商协议本体文案和前后缀生效，小于10.0不生效 */
 @property (nonatomic, strong) UIFont *privacyOperatorFont;
 /** 运营商协议文案下划线，仅对运营商协议本体文案和前后缀生效，YES：展示下划线；NO：不展示下划线，默认不展示 */
 @property (nonatomic, assign) BOOL privacyOperatorUnderline;
@@ -334,6 +344,8 @@ typedef CGRect(^PNSBuildFrameBlock)(CGSize screenSize, CGSize superViewSize, CGR
 @property (nonatomic, assign) BOOL privacyAlertIsNeedShow;
 /** 二次隐私协议弹窗点击按钮是否需要执行登陆，默认YES */
 @property (nonatomic, assign) BOOL privacyAlertIsNeedAutoLogin;
+/** 二次隐私协议弹窗显示/隐藏动画时长，单位秒，默认0.3s，<=0时使用默认值 */
+@property (nonatomic, assign) CGFloat privacyAlertAnimationDuration;
 /** 二次隐私协议弹窗显示自定义动画，默认从下往上位移动画 */
 @property (nonatomic, strong, nullable) CAAnimation *privacyAlertEntryAnimation;
 /** 二次隐私协议弹窗隐藏自定义动画，默认从上往下位移动画 */
@@ -346,7 +358,7 @@ typedef CGRect(^PNSBuildFrameBlock)(CGSize screenSize, CGSize superViewSize, CGR
 @property (nonatomic, assign) CGFloat privacyAlertAlpha;
 /** 二次隐私协议弹窗标题文字内容，默认"请阅读并同意以下条款" */
 @property (nonatomic, copy) NSString *privacyAlertTitleContent;
-/** 二次隐私协议弹窗标题文字字体，最小12，默认12 */
+/** 二次隐私协议弹窗标题文字字体，最小10，默认10 */
 @property (nonatomic, strong) UIFont *privacyAlertTitleFont;
 /** 二次隐私协议弹窗标题文字颜色，默认黑色 */
 @property (nonatomic, strong) UIColor *privacyAlertTitleColor;
@@ -354,7 +366,7 @@ typedef CGRect(^PNSBuildFrameBlock)(CGSize screenSize, CGSize superViewSize, CGR
 @property (nonatomic, strong) UIColor *privacyAlertTitleBackgroundColor;
 /** 二次隐私协议弹窗标题位置，默认居中*/
 @property (nonatomic, assign) NSTextAlignment privacyAlertTitleAlignment;
-/** 二次隐私协议弹窗协议内容文字字体，最小12，默认12 */
+/** 二次隐私协议弹窗协议内容文字字体，最小10，默认10 */
 @property (nonatomic, strong) UIFont *privacyAlertContentFont;
 /** 二次隐私协议弹窗协议内容行间距，默认0 */
 @property (nonatomic, assign) CGFloat privacyAlertLineSpaceDp;
@@ -362,7 +374,7 @@ typedef CGRect(^PNSBuildFrameBlock)(CGSize screenSize, CGSize superViewSize, CGR
 @property (nonatomic, strong) UIColor *privacyAlertContentBackgroundColor;
 /** 二次隐私协议弹窗协议内容颜色数组，[非点击文案颜色，点击文案颜色],默认[0x999999,0x1890FF] */
 @property (nonatomic, copy) NSArray<UIColor *> *privacyAlertContentColors;
-/** 二次隐私协议弹窗运营商协议内容文字字体，仅对运营商协议部分的文本生效，最小12，默认12 */
+/** 二次隐私协议弹窗运营商协议内容文字字体，仅对运营商协议部分的文本生效，最小10，默认10 */
 @property (nonatomic, strong) UIFont *privacyAlertContentOperatorFont;
 /** 二次隐私协议弹窗运营商协议内容文字下划线，仅对运营商协议部分的文本生效，YES：展示下划线，NO：不展示下划线，默认不展示 */
 @property (nonatomic, assign) BOOL privacyAlertContentUnderline;
