@@ -46,7 +46,11 @@
 		</data>
 		<key>Headers/ATAuthSDK.h</key>
 		<data>
-		l5HUD5vSRJIxPellrGLaWdFIb6Q=
+		aAnMZE7TYueOjgMJw9Ikv+iahqw=
+		</data>
+		<key>Headers/PNSFeatureManager.h</key>
+		<data>
+		acnbmfOLEqB89DzE6aVm7f0Z/FU=
 		</data>
 		<key>Headers/PNSReporter.h</key>
 		<data>
@@ -70,7 +74,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AGcFhyPj2LLQSKw/LIuV575syoU=
+		bemDuy344bu5mOfpNGiHlQZbrgk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -197,11 +201,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			l5HUD5vSRJIxPellrGLaWdFIb6Q=
+			aAnMZE7TYueOjgMJw9Ikv+iahqw=
 			</data>
 			<key>hash2</key>
 			<data>
-			IMjeQ0UGoQ3icGjjhyGM6e7KZVwASuSRpNFM3CxSThY=
+			+0oxdswZvxPt77lW1iFaeXGUidF+6IjNUhIkZEpd08w=
+			</data>
+		</dict>
+		<key>Headers/PNSFeatureManager.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			acnbmfOLEqB89DzE6aVm7f0Z/FU=
+			</data>
+			<key>hash2</key>
+			<data>
+			RdOHw+tBb2pTdNgTz4mYgcdwRbHgJnI86CCCRCmK4Tw=
 			</data>
 		</dict>
 		<key>Headers/PNSReporter.h</key>
